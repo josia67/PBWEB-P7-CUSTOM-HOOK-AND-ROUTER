@@ -1,0 +1,11 @@
+# Contoh saja. Sesuaikan root dan server_name, kemudian periksa nginx -t.
+server {
+    listen 80;
+    server_name example.test;
+    root /var/www/praktikum-spa/dist;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
